@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Image.asset('images/3568983.png'),
+                  width: 390,
                   alignment: Alignment(0, 1),
                 ),
                 Align(
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
                     onPressed: () {},
                     color: Colors.white,
                     textColor: Colors.black,
-                    padding: EdgeInsets.only(left: 32, right: 32),
+                    padding: EdgeInsets.only(
+                        left: 37, right: 37, top: 10, bottom: 10),
                     elevation: 8,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -42,7 +44,8 @@ class MyApp extends StatelessWidget {
                     onPressed: () {},
                     color: Colors.white,
                     textColor: Colors.black,
-                    padding: EdgeInsets.only(left: 32, right: 32),
+                    padding: EdgeInsets.only(
+                        left: 37, right: 37, top: 10, bottom: 10),
                     elevation: 8,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
