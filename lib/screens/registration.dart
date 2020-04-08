@@ -3,6 +3,7 @@ import 'package:voiceprescriptionfe/screens/sign_up.dart';
 
 class Registration extends StatelessWidget {
   static String id = 'registrationscreen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
