@@ -101,5 +101,5 @@ class RoundIcon extends StatelessWidget {
         color: Color.fromRGBO(27, 55, 100, 1),
       ),
     );
-  }
+  } 
 }
