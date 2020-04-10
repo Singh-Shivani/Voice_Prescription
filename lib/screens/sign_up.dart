@@ -88,18 +88,17 @@ class RoundIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 30,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        border: Border.all(
-          color: Color.fromRGBO(27, 55, 100, 1),
-          width: 1,
+        width: 30,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(
+            color: Color.fromRGBO(27, 55, 100, 1),
+            width: 1,
+          ),
         ),
-      ),
-      child: Icon(
-        Icons.check,
-        color: Color.fromRGBO(27, 55, 100, 1),
-      ),
-    );
-  } 
+        child: Icon(
+          Icons.check,
+          color: Color.fromRGBO(27, 55, 100, 1),
+        ));
+  }
 }
