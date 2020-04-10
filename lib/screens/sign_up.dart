@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
@@ -9,39 +10,95 @@ class SignUp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Container(
-            child: Stack(
-              children: <Widget>[
-                Align(
-                  alignment: AlignmentDirectional(0, -0.5),
-                  child: Container(
-                    height: 180,
-                    width: 220,
-                    child: Card(
-                      shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      color: Colors.blue,
-                      elevation: 9,
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(0, 0.5),
-                  child: Container(
-                    height: 180,
-                    width: 220,
-                    child: Card(
-                      shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      elevation: 9,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+//              Image.asset('images/X - SignUp.png'),
+              SignupCards(
+                image: Image.asset('images/Doctor_DP.png'),
+                text: 'SignUp as Doctor',
+              ),
+              SignupCards(
+                image: Image.asset('images/Patient_DP.png'),
+                text: 'SignUp as Patient',
+              ),
+            ],
+          )),
         ),
+      ),
+    );
+  }
+}
+
+class SignupCards extends StatelessWidget {
+  SignupCards({this.image, this.text});
+
+  final Image image;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 40, horizontal: 70),
+      child: Column(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    image,
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      text,
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                height: 170,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(
+                    color: Color.fromRGBO(27, 55, 100, 1),
+                    width: 1.2,
+                  ),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Color.fromRGBO(27, 55, 100, 1),
+                      offset: Offset(0, 0.95),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          RoundIcon(),
+        ],
+      ),
+    );
+  }
+}
+
+class RoundIcon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 30,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(
+          color: Color.fromRGBO(27, 55, 100, 1),
+          width: 1,
+        ),
+      ),
+      child: Icon(
+        Icons.check,
+        color: Color.fromRGBO(27, 55, 100, 1),
       ),
     );
   }
