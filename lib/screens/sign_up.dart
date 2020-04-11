@@ -10,20 +10,27 @@ class SignUp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/Bg_SignUp.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
               child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-//              Image.asset('images/X - SignUp.png'),
-              SignupCards(
-                image: Image.asset('images/Doctor_DP.png'),
-                text: 'SignUp as Doctor',
-              ),
-              SignupCards(
-                image: Image.asset('images/Patient_DP.png'),
-                text: 'SignUp as Patient',
-              ),
-            ],
-          )),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  SignupCards(
+                    image: Image.asset('images/Doctor_DP.png'),
+                    text: 'SignUp as Doctor',
+                  ),
+                  SignupCards(
+                    image: Image.asset('images/Patient_DP.png'),
+                    text: 'SignUp as Patient',
+                  ),
+                ],
+              )),
         ),
       ),
     );
