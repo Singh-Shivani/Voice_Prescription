@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voiceprescriptionfe/screens/sign_up.dart';
 import 'package:voiceprescriptionfe/screens/login.dart';
@@ -8,58 +9,65 @@ class Registration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                child: Image.asset('images/3568983.png'),
-                width: 390,
-                alignment: Alignment(0, 1),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0, 0.14),
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, Login.id);
-                  },
-                  color: Colors.white,
-                  textColor: Colors.black,
-                  padding:
-                      EdgeInsets.only(left: 37, right: 37, top: 10, bottom: 10),
-                  elevation: 8,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    "Log In",
-                    style: TextStyle(
-                        color: Color.fromRGBO(27, 55, 100, 1), fontSize: 18),
-                  ),
+      body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/3568983.png'),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.bottomCenter,
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.only(top: 160),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CustomRaisedButton(
+                  text: 'Log In',
+                  id: '',
                 ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0, 0.34),
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, SignUp.id);
-                  },
-                  color: Colors.white,
-                  textColor: Colors.black,
-                  padding:
-                      EdgeInsets.only(left: 37, right: 37, top: 10, bottom: 10),
-                  elevation: 8,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                        color: Color.fromRGBO(27, 55, 100, 1), fontSize: 18),
-                  ),
+                SizedBox(
+                  height: 30,
                 ),
-              ),
-            ],
+                CustomRaisedButton(
+                  text: 'Sign Up',
+                  id: SignUp.id,
+                ),
+              ],
+            ),
+          )),
+    );
+  }
+}
+
+class CustomRaisedButton extends StatelessWidget {
+  CustomRaisedButton({@required this.text, @required this.id});
+
+  final String text;
+  final String id;
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonTheme(
+      minWidth: 150,
+      height: 45,
+      child: RaisedButton(
+        elevation: 8.0,
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, id);
+        },
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Color.fromRGBO(27, 55, 100, 1),
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
           ),
         ),
       ),
