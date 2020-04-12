@@ -10,27 +10,28 @@ class SignUp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/Bg_SignUp.png'),
-                  fit: BoxFit.fill,
-                ),
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/Bg_SignUp.png'),
+                fit: BoxFit.fill,
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  SignupCards(
-                    image: Image.asset('images/Doctor_DP.png'),
-                    text: 'SignUp as Doctor',
-                  ),
-                  SignupCards(
-                    image: Image.asset('images/Patient_DP.png'),
-                    text: 'SignUp as Patient',
-                  ),
-                ],
-              )),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                SignupCards(
+                  image: Image.asset('images/Doctor_DP.png'),
+                  text: 'SignUp as Doctor',
+                ),
+                SignupCards(
+                  image: Image.asset('images/Patient_DP.png'),
+                  text: 'SignUp as Patient',
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -94,18 +95,12 @@ class SignupCards extends StatelessWidget {
 class RoundIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 30,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(
-            color: Color.fromRGBO(27, 55, 100, 1),
-            width: 1,
-          ),
-        ),
-        child: Icon(
-          Icons.check,
-          color: Color.fromRGBO(27, 55, 100, 1),
-        ));
+    return CircleAvatar(
+      radius: 30,
+      child: Icon(
+        Icons.check,
+        color: Color.fromRGBO(27, 55, 100, 1),
+      ),
+    );
   }
 }

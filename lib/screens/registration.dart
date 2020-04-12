@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voiceprescriptionfe/screens/sign_up.dart';
+import 'package:voiceprescriptionfe/screens/login.dart';
 
 class Registration extends StatelessWidget {
   static String id = 'registrationscreen';
@@ -19,7 +20,9 @@ class Registration extends StatelessWidget {
               Align(
                 alignment: AlignmentDirectional(0, 0.14),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, Login.id);
+                  },
                   color: Colors.white,
                   textColor: Colors.black,
                   padding:
