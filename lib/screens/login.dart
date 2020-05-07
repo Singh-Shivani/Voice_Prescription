@@ -98,7 +98,7 @@ class Login extends StatelessWidget {
                     inputText: 'LOG IN',
                   ),
                   SizedBox(
-                    height: 20,  
+                    height: 20,
                   ),
                   ForgetPasswordButton(), // In widgets/forget_password_buttons.dart
                 ],
