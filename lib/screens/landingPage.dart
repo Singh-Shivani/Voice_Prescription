@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:voiceprescriptionfe/screens/sign_up.dart';
 import 'package:voiceprescriptionfe/screens/login.dart';
 
-class Registration extends StatelessWidget {
-  static String id = 'registrationscreen';
+class LandingPage extends StatelessWidget {
+  static String id = 'landingpage';
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +20,16 @@ class Registration extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.only(top: 160),
+            padding: EdgeInsets.only(top: 80),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CustomRaisedButton(
                   text: 'Log In',
-                  id: '',
+                  id: Login.id,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 CustomRaisedButton(
                   text: 'Sign Up',
@@ -54,7 +54,7 @@ class CustomRaisedButton extends StatelessWidget {
       minWidth: 150,
       height: 45,
       child: RaisedButton(
-        elevation: 8.0,
+        elevation: 5.0,
         color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
